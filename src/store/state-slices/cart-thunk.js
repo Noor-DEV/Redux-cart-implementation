@@ -1,9 +1,10 @@
 import { uiActions } from "./ui-slice";
 import { cartActions } from "./cart";
+import FIRE_BASE_URL from "../../../vars";
 
 export const initialFetch = () => {
   return (dispatch) => {
-    fetch("https://react-backend-d4c31-default-rtdb.firebaseio.com/cart.json")
+    fetch(FIRE_BASE_URL)
       .then((res) => res.json())
       .then((data) => {
         dispatch(cartActions.loadInitialData(data));
@@ -25,7 +26,7 @@ export const sendCartData = (cart) => {
       })
     );
     console.log(cart, "B444444444");
-    fetch("https://react-backend-d4c31-default-rtdb.firebaseio.com/cart.json", {
+    fetch(FIRE_BASE_URL, {
       method: "PUT",
       body: JSON.stringify(cart),
     })

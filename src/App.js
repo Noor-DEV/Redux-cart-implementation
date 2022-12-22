@@ -33,7 +33,7 @@ function App() {
     //     message: "Sending Cart Data....",
     //   })
     // );
-    // fetch("https://react-backend-d4c31-default-rtdb.firebaseio.com/cart.json", {
+    // fetch("FIRE_BASE_URL", {
     //   method: "PUT",
     //   body: JSON.stringify(cart),
     // })
